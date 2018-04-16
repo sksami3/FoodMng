@@ -17,8 +17,38 @@ namespace FoodMgr.Models
         public double price { get; set; }
         [Required]
         [ForeignKey("Catagory")]
+        [NotMapped]
         public int Catagory_id { get; set; }
         public Catagory Catagory { get; set; }
+        [NotMapped]
+        public IEnumerable<Link> Link
+        {
+            get
+            {
+                return new List<Link>()
+                {
+                    new Link()
+                    {
+                        Href=$"http://localhost:1224/api/Item/{this.id}",
+                        Rel="Details",
+                        Method="Get"
+                    },
+
+                    new Link()
+                    {
+                        Href=$"http://localhost:1224/api/Item/{this.id}",
+                        Rel="Delete",
+                        Method="Delete"
+                    },
+                    new Link()
+                    {
+                        Href=$"http://localhost:1224/api/Item/{this.id}/Catagory",
+                        Rel="CAtagories's Details",
+                        Method="Get"
+                    }
+                };
+            }
+        }
 
     }
 }

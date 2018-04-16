@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace FoodMgr.Controllers
 {
+    [RoutePrefix("api/Catagory")]
     public class CatagoryController : ApiController
     {
         private FoodDataContext _db;
@@ -59,6 +60,11 @@ namespace FoodMgr.Controllers
                 return Ok("deleted");
             }
             return NotFound();
+        }
+        [Route("{item_id}/Item")]
+        public IEnumerable<Item> GetItems(int item_id)
+        {
+            return _db.items.Where(c=> c.id == item_id).ToList();
         }
 
     }

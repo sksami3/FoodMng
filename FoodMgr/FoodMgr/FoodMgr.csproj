@@ -106,11 +106,13 @@
     <Compile Include="AppDataContext\FoodDataContext.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CatagoryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

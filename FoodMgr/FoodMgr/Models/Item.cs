@@ -17,7 +17,7 @@ namespace FoodMgr.Models
         public double price { get; set; }
         [Required]
         [ForeignKey("Catagory")]
-        [NotMapped]
+        
         public int Catagory_id { get; set; }
         public Catagory Catagory { get; set; }
         [NotMapped]
